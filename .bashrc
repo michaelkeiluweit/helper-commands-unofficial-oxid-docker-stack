@@ -10,9 +10,7 @@ function doxid {
 
 
 #    echo "Stopping ongoing docker images...";
-#    docker ps -aq | xargs --no-run-if-empty docker stop $(docker ps -a -q);
-#    docker ps -aq | xargs --no-run-if-empty docker rm $(docker ps -a -q);
-    dkill
+    dstop
 
     git clone $repository $targetpath
     echo "Created directory:" $targetpath
@@ -28,13 +26,23 @@ function doxid {
     echo "done."
 }
 
-function dkill {
+function dstop {
     echo "Stopping ongoing docker images...";
     docker ps -aq | xargs --no-run-if-empty docker stop $(docker ps -a -q);
     docker ps -aq | xargs --no-run-if-empty docker rm $(docker ps -a -q);
 }
 
+function dstart {
+    echo "Boot up the docker containers..."
+    docker-compose up -d
+    echo "Start PHPStorm"
+    (nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)
+    dlogin
+}
+
 function dlogin {
     echo "Switch context to docker container php"
-    docker-compose exec php bash
+    #docker-compose exec php bash
+    gnome-terminal -- bash -c "docker-compose exec php bash;bash"
 }
+
