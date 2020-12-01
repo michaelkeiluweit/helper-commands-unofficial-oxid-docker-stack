@@ -15,8 +15,8 @@ function doxid {
     cd $targetpath
 
     echo "Copy default docker configuration"
-    cp ~/bin/docker_config/.env $targetpath
-    cp ~/bin/docker_config/auth.json $targetpath
+    cp ~/docker_config/.env $targetpath
+    cp ~/docker_config/auth.json $targetpath
 
     echo "open PHPStorm"
     (nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)
