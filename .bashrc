@@ -1,5 +1,3 @@
-# MKMKMK
-
 export PATH=~/bin/:$PATH
 
 function doxid {
@@ -33,7 +31,7 @@ function dstop {
 }
 
 function dstart {
-    echo "Boot up the docker containers..."
+    echo "Boot the docker containers..."
     docker-compose up -d
     echo "Start PHPStorm"
     (nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)
@@ -44,5 +42,9 @@ function dlogin {
     echo "Switch context to docker container php"
     #docker-compose exec php bash
     gnome-terminal -- bash -c "docker-compose exec php bash;bash"
+}
+
+function dlogs {
+    docker-compose logs -f php
 }
 
