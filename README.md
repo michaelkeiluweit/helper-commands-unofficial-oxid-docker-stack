@@ -1,7 +1,7 @@
 # Helper commands for the unofficial OXID_Docker_Stack
 Helper commands for the unofficial [OXID_Docker_Stackv2](https://github.com/OXIDFabian/OXID_Docker_Stackv2) from [OXIDFabian](https://github.com/OXIDFabian/)
 
-### "install"
+### install
 Copy the content from the file [.bashrc](https://github.com/michaelkeiluweit/linux-docker-helper/blob/master/.bashrc) into your very own .bashrc file. 
 
 Copy the directory [docker_config](https://github.com/michaelkeiluweit/linux-docker-helper/tree/master/docker_config) to your home directory, next to the .bashrc file.
