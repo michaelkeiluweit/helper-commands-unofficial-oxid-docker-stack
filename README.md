@@ -1,7 +1,7 @@
 # Helper commands for the unofficial OXID_Docker_Stack
 Helper commands for the unofficial [OXID_Docker_Stackv2](https://github.com/OXIDFabian/OXID_Docker_Stackv2) from [OXIDFabian](https://github.com/OXIDFabian/)
 
-### install
+### Install
 Copy the content from the file [.bashrc](https://github.com/michaelkeiluweit/linux-docker-helper/blob/master/.bashrc) into your very own .bashrc file.   
 Be aware to adapt the path to the phpstorm executeable `(nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)` according to your own system. It is helpful to install the [Intellij Toolbox-App](https://www.jetbrains.com/de-de/toolbox-app/) since it can provide you the correct path to PHPStorm.  
 
@@ -13,7 +13,7 @@ Adjust the content from the files which are located in docker_config to your own
 - `auth.json` This file is read by composer in case of credentials are needed to download a package. Since I don't want to enter each time the same credentials, this file replaces the one from the Docker stack repository,
 Open a new shell to be able to use the commands.
 
-### commands
+### Commands
 
 - `doxid <directory name>`  
   Creates a new directory with the given name and switches your context into it.  
