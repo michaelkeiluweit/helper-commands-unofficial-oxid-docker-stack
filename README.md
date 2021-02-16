@@ -2,7 +2,8 @@
 Helper commands for the unofficial [OXID_Docker_Stackv2](https://github.com/OXIDFabian/OXID_Docker_Stackv2) from [OXIDFabian](https://github.com/OXIDFabian/)
 
 ### install
-Copy the content from the file [.bashrc](https://github.com/michaelkeiluweit/linux-docker-helper/blob/master/.bashrc) into your very own .bashrc file. 
+Copy the content from the file [.bashrc](https://github.com/michaelkeiluweit/linux-docker-helper/blob/master/.bashrc) into your very own .bashrc file.   
+Be aware to adapt the path to the phpstorm executeable `(nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)` according to your own system. It is helpful to install the [Intellij Toolbox-App](https://www.jetbrains.com/de-de/toolbox-app/) since it can provide you the correct path to PHPStorm.  
 
 Copy the directory [docker_config](https://github.com/michaelkeiluweit/linux-docker-helper/tree/master/docker_config) to your home directory, next to the .bashrc file.
 Be aware that the functions from the file .bashrc are searching for this folder in the home directory.
