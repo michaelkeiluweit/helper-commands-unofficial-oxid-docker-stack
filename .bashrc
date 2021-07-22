@@ -6,8 +6,6 @@ function doxid {
     targetpath=/var/www/$name
     repository=https://github.com/OXIDFabian/OXID_Docker_Stackv2.git
 
-
-#    echo "Stopping ongoing docker images...";
     dstop
 
     git clone $repository $targetpath
@@ -26,15 +24,21 @@ function doxid {
 
 function dstop {
     echo "Stopping ongoing docker images...";
-    docker ps -aq | xargs --no-run-if-empty docker stop $(docker ps -a -q);
-    docker ps -aq | xargs --no-run-if-empty docker rm $(docker ps -a -q);
+    docker ps -aq | xargs --no-run-if-empty docker stop $(docker ps -a -q)
+    wait $!
+
+    #docker ps -aq | xargs --no-run-if-empty docker rm $(docker ps -a -q)
+    #wait $!
+    
+    docker network prune -f;
 }
 
+
 function dstart {
-    echo "Boot the docker containers..."
-    docker-compose up -d
+    echo "Boot docker containers..."
+    docker-compose up -d --force-recreate
     echo "Start PHPStorm"
-    (nohup /usr/local/bin/pstorm .  >/dev/null 2>&1 &)
+    (nohup phpstorm .  >/dev/null 2>&1 &)
     dlogin
 }
 
