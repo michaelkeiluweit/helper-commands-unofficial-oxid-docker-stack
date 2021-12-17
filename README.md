@@ -33,3 +33,7 @@ Open a new shell to be able to use the commands.
   
 - `dstop`  
   stops all running conainers
+
+## Mac
+Since the performance of the volumes are way too slow to work with, another tool is needed to increase the speed: docker-sync.  
+How to install docker sync: https://github.com/michaelkeiluweit/OXID_Docker_Stackv2_4Mac
